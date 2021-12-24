@@ -26,7 +26,7 @@ insert into input(name) values('poyopoyo');
 カラム: id(int, pk), name(varchar10)
 
 
-### Embulkのymlファイルの書き方
+### embulkのymlファイルの書き方
 ~~~
 # Input側のこと
 in:
@@ -72,9 +72,9 @@ mysql> SELECT*FROM input;
 ~~~
 mysql> SELECT*FROM output;
 ~~~
-### Embulkを動かす
+### embulkを動かす
 ~~~
-# Embulkのコンテナにはいって以下を実行
+# embulkのコンテナにはいって以下を実行
 $ embulk run config.yml 
 ~~~~~~~~略~~~~~~~~
 2021-12-24 16:21:19.559 +0000 [INFO] (main): Committed.

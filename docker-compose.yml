@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db_input:
+      build: ./input/ 
+      volumes:
+        - "./input/data:/var/lib/mysql" 
+        - "./input/init:/docker-entrypoint-initdb.d"
+      environment: 
+        - MYSQL_ROOT_PASSWORD=password 
+        - MYSQL_DATABASE=db_input
+      ports:
+        - 3306:3306
+  db_output:
+      build: ./output/
+      volumes:
+        - "./output/data:/var/lib/mysql" 
+        - "./output/init:/docker-entrypoint-initdb.d"
+      environment: 
+        - MYSQL_ROOT_PASSWORD=password 
+        - MYSQL_DATABASE=db_output
+      ports:
+        - 3307:3306
+  embulk:
+    build: ./embulk
+    tty: true
+
+  

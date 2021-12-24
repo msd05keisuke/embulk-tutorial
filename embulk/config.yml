@@ -1,0 +1,16 @@
+in:
+  type: mysql
+  host: db_input
+  database: db_input
+  user: root
+  password: password
+  table: "input"
+  select: "*"
+out:
+  type: mysql
+  host: db_output
+  database: db_output
+  user: root
+  password: password
+  table: "output"
+  mode: insert
